@@ -5,6 +5,7 @@ let obstacleX, obstacleY;
 let score = 0;
 let gameOver = false;
 obstacleSpeed = 0.5
+hits = 0
 
 function setup() {
   createCanvas(400, 400);
@@ -121,6 +122,13 @@ function checkCollisions() {
   //   - Increase hits
   //   - Check for game over (hits >= 3)
   //   - Reset positions
+  if(dist(playerX,playerY,obstacleX,obstacleY)<20){
+    hits++
+    if(hits>=3){
+      displayGameOver()
+    }
+    initializeGame()
+  }
 }
 
 function displayStats() {
