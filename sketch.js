@@ -4,7 +4,7 @@ let coinX, coinY;
 let obstacleX, obstacleY;
 let score = 0;
 let gameOver = false;
-obstacleSpeed = 1
+obstacleSpeed = 0.5
 
 function setup() {
   createCanvas(400, 400);
@@ -106,6 +106,12 @@ function checkCoinCollection() {
   //   - Increase score
   //   - Create new coin
   //   - Increase obstacle speed slightly
+  if(dist(playerX,playerY,coinX,coinY)<15){
+    score++
+    coinX = random(20,width-20)
+    coinY = random(20,height-20)
+    obstacleSpeed += 0.5
+  }
 }
 
 function checkCollisions() {
