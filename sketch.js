@@ -95,6 +95,7 @@ function moveObstacle() {
   if(obstacleY>height){
     obstacleY = 0
     obstacleX = random(20,width - 20)
+    obstacleSpeed+=0.5
   }
 }
 
