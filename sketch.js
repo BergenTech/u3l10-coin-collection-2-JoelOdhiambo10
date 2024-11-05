@@ -91,7 +91,8 @@ function movePlayer() {
 function moveObstacle() {
   // TODO: Move obstacle from left to right
   // HINT: Increase obstacleX by obstacleSpeed
-  obstacleY += obstacleSpeed
+  obstacleY += obstacleSpeed 
+  
   
   // TODO: Reset obstacle when it goes off screen
   // HINT: Check if obstacleX > width
