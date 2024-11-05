@@ -181,9 +181,10 @@ function keyPressed() {
   // HINT: Use key === 'r' || key === 'R'
   // Only works when game is over
   if(gameOver == true){
-    if(keyIsPressed('r')){
-    resetGame()
+    if(keyPressed('r')){
+      resetGame()
     }
+
   }
 }
 
