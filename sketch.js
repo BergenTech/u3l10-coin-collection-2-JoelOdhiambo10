@@ -136,6 +136,8 @@ function displayStats() {
   textSize(16);
   text("Score: " + score, 10, 20);
   // TODO: Add display for hits and speed
+  text("Hits:" + hits,150,20)
+  text("Speed:"+ obstacleSpeed,250,20)
 }
 
 function displayGameOver() {
@@ -145,6 +147,15 @@ function displayGameOver() {
   //   - "Game Over" message
   //   - Final score
   //   - "Press R to Restart"
+  gameOver = true
+  fill(0)
+  textAlign(CENTER,CENTER)
+  textSize(50)
+  text("Game Over",width/2,height/2)
+  textSize(30)
+  text("Final Score:" + score,width/2,height/2+40)
+  text("Press R to Restart",width/2,height/2+70)
+
 }
 
 function newCoin() {
@@ -158,12 +169,22 @@ function resetGame() {
   // HINT: Reset score, hits, speed
   // Set gameOver to false
   // Call initializeGame()
+  score = 0
+  speed = 0.5
+  hits = 0
+  gameOver = false
+  initializeGame()
 }
 
 function keyPressed() {
   // TODO: Check for 'R' key to restart game
   // HINT: Use key === 'r' || key === 'R'
   // Only works when game is over
+  if(gameOver == true){
+    if(keyIsPressed('r')){
+    resetGame()
+    }
+  }
 }
 
 // Helper function you might need
